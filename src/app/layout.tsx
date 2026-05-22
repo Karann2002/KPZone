@@ -5,7 +5,7 @@ import {
 } from "next/font/google";
 
 import "./globals.css";
-
+import AnimatedBackground from "@/components/AnimatedBackground";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

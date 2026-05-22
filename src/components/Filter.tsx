@@ -75,7 +75,7 @@ const Filters: React.FC<FiltersProps> = ({
       </div>
 
       {/* Budget Filter */}
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <h4 className="text-base mb-3 text-text-primary font-semibold">
           Max Budget: ₹
           {filters.maxPrice.toLocaleString("en-IN")}
@@ -97,7 +97,7 @@ const Filters: React.FC<FiltersProps> = ({
             <span>₹25,000+</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Gender Filter */}
       <div className="mb-6">

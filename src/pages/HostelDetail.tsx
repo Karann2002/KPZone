@@ -23,6 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { mockHostels } from "@/data/mockHostel";
+import { log } from "console";
 
 /* ---------------- TYPES ---------------- */
 interface GalleryItem {
@@ -42,22 +43,25 @@ interface Review {
 }
 
 interface Hostel {
+
   id: number;
+  slug : string;
   name: string;
   price: number;
   gallery?: GalleryItem[];
   amenities?: Amenity[];
   institutions?: string[];
   reviews?: Review[];
-  address?: string;
+  location?: string;
+  
   description?: string;
 }
 
 /* ---------------- COMPONENT ---------------- */
 const HostelDetail: React.FC = () => {
   const params = useParams();
-  const router = useRouter();
-  const id = params?.id as string;
+ 
+  const slug = params?.slug as string;
 
   const [activeTab, setActiveTab] = useState<string>("Overview");
   
@@ -65,7 +69,8 @@ const HostelDetail: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", sharing: "Single Occupancy" });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const hostel = mockHostels.find((h: any) => h.id === Number(id)) as Hostel | undefined;
+  const hostel = mockHostels.find((h) => h.slug === slug) as Hostel | undefined;
+  
 
   if (!hostel) {
     return (
@@ -99,18 +104,7 @@ const HostelDetail: React.FC = () => {
 
   return (
     <div className="bg-bg-surface/30 min-h-screen pb-24">
-      {/* Top Utility Header */}
-      <div className="bg-white border-b border-border-light sticky top-0 z-30 shadow-sm">
-        <div className="container mx-auto px-6 h-16 flex items-center max-w-7xl">
-          <button
-            onClick={() => router.back()}
-            className="flex items-center gap-2 text-text-secondary hover:text-brand-primary font-medium transition-colors"
-          >
-            <ArrowLeft size={20} />
-            <span>Back to Listings</span>
-          </button>
-        </div>
-      </div>
+      
 
       {/* Main Container */}
       <div>
@@ -200,7 +194,7 @@ const HostelDetail: React.FC = () => {
                     </h1>
                     <div className="flex items-center gap-2 text-text-secondary mb-6 text-sm">
                       <MapPin size={16} className="text-brand-primary shrink-0" />
-                      <span>{hostel.address || "Premium Location, Indore"}</span>
+                      <span>{hostel.location || "Premium Location, Indore"}</span>
                     </div>
 
                     <p className="text-text-secondary text-sm sm:text-base mb-8 leading-relaxed">
@@ -252,17 +246,32 @@ const HostelDetail: React.FC = () => {
 
                 {/* 3. LOCATION VIEWPORT */}
                 {activeTab === "Location" && (
-                  <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-4">
-                    <h3 className="text-xl font-heading font-bold text-text-primary">Map & Proximity</h3>
-                    <div className="h-80 w-full bg-zinc-100 rounded-2xl border border-border-light flex flex-col items-center justify-center p-6 text-center">
-                      <div className="w-12 h-12 bg-white text-brand-primary rounded-full shadow-md flex items-center justify-center mb-3">
-                        <MapPin size={24} />
-                      </div>
-                      <p className="text-sm text-text-primary font-semibold">{hostel.address || "Indore Area Location Core"}</p>
-                      <p className="text-xs text-text-tertiary mt-1 max-w-sm">Google Maps dynamic embedding activates upon verified routing calls.</p>
-                    </div>
-                  </div>
-                )}
+  <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-4">
+    
+    <h3 className="text-xl font-heading font-bold text-text-primary">
+      Map & Proximity
+    </h3>
+
+    <div className="h-auto w-full bg-zinc-100 rounded-2xl border border-border-light flex flex-col items-center justify-center text-center">
+      
+      
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.7271410590643!2d77.49892889678955!3d28.457640600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc15e96160b51%3A0x41d7b05b0722757a!2sShree%20Sawaria%20House%20-%20Boys%20Hostel%20In%20Greater%20Noida!5e0!3m2!1sen!2sin!4v1779444238177!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="rounded-2xl w-full"
+      />
+
+      <p className="text-xs text-text-tertiary mt-3 max-w-sm">
+        Google Maps dynamic embedding activates upon verified routing calls.
+      </p>
+    </div>
+  </div>
+)}
 
                 {/* 4. REVIEWS VIEWPORT */}
                 {activeTab === "Reviews" && (
@@ -305,7 +314,7 @@ const HostelDetail: React.FC = () => {
               
               {/* Booking Input Execution Box */}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border-light shadow-xl">
-                <div className="flex justify-between items-start mb-6">
+                {/* <div className="flex justify-between items-start mb-6">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-text-tertiary block mb-1">Monthly Tariff</span>
                     <h3 className="text-3xl font-black text-brand-primary flex items-center tracking-tight">
@@ -318,7 +327,10 @@ const HostelDetail: React.FC = () => {
                     <span className="text-[11px] font-bold uppercase tracking-wider bg-zinc-100 text-zinc-600 px-2 py-1 rounded-md inline-block mb-1">Refundable</span>
                     <p className="text-xs text-text-secondary font-medium">Deposit: ₹5,000</p>
                   </div>
-                </div>
+                </div> */}
+                <div><h3 className="text-3xl font-black  flex items-center tracking-tight py-2">
+                      <span>Contact Us</span>
+                    </h3></div>
 
                 {isSubmitted ? (
                   <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-6 rounded-xl text-center animate-in zoom-in-95 duration-200">
@@ -358,7 +370,6 @@ const HostelDetail: React.FC = () => {
                       >
                         <option>Single Occupancy</option>
                         <option>Double Sharing</option>
-                        <option>Triple Sharing</option>
                       </select>
                     </div>
 

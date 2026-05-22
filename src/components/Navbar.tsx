@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-[400px] items-center bg-bg-surface border border-border-light rounded-full p-1 pl-4 shadow-sm transition-all duration-300 focus-within:border-brand-primary focus-within:ring-2 focus-within:ring-brand-primary/20">
+          {/* <div className="hidden md:flex flex-1 max-w-[400px] items-center bg-bg-surface border border-border-light rounded-full p-1 pl-4 shadow-sm transition-all duration-300 focus-within:border-brand-primary focus-within:ring-2 focus-within:ring-brand-primary/20">
             <MapPin size={18} className="text-text-tertiary" />
             <input
               type="text"
@@ -34,10 +34,16 @@ const Navbar: React.FC = () => {
             <button className="bg-brand-primary text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-150 hover:bg-brand-primary-hover shrink-0">
               <Search size={18} />
             </button>
-          </div>
+          </div> */}
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
+            <Link
+              href="/"
+              className="font-medium text-text-secondary transition-colors duration-150 hover:text-brand-primary"
+            >
+              Home
+            </Link>
             <Link
               href="/explore"
               className="font-medium text-text-secondary transition-colors duration-150 hover:text-brand-primary"

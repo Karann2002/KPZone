@@ -11,6 +11,7 @@ import Link from "next/link";
 const Home: React.FC = () => {
   const navigate = useRouter();
 
+
   // Display top 3 featured hostels
   const featuredHostels = mockHostels.slice(0, 3);
 
@@ -57,9 +58,9 @@ const Home: React.FC = () => {
         </div>
 
         {/* Hostel Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto">
           {featuredHostels.map((hostel) => (
-            <div key={hostel.id} className="transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-2xl overflow-hidden">
+            <div key={hostel.slug} className="transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-2xl overflow-hidden">
               <HostelCard hostel={hostel} />
             </div>
           ))}
@@ -67,7 +68,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-bg-surface border-y border-border-light relative overflow-hidden">
+      <section className="py-20   relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           
@@ -170,7 +171,7 @@ const Home: React.FC = () => {
               Ready to find your perfect stay?
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Explore hundreds of verified student and professional accommodations tailored to your budget.
+              Explore verified student and professional accommodations tailored to your budget.
             </p>
             <Link href="/explore"> <button
               

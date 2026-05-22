@@ -39,11 +39,7 @@ const FloatingWhatsAppEnquiry: React.FC = () => {
   ) => {
     if (e) e.preventDefault();
 
-    const message = `Hello, I'm interested in the hostel.
-    
-Name: ${formData.name}
-Room Preference: ${formData.roomType}
-Expected Move-in: ${formData.moveInDate}`;
+    const message = `Hello, I'm interested in the hostel.`;
 
     const encodedMessage =
       encodeURIComponent(message);
@@ -148,6 +144,7 @@ Expected Move-in: ${formData.moveInDate}`;
             {/* Submit Button */}
             <button
               type="submit"
+              
               className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition shadow-md"
             >
               <MessageCircle size={18} />
@@ -159,9 +156,7 @@ Expected Move-in: ${formData.moveInDate}`;
 
       {/* Floating Button */}
       <button
-        onClick={() =>
-          setIsOpen(!isOpen)
-        }
+        onClick={handleWhatsAppRedirect}
         className={`relative ${
           isOpen
             ? "bg-gray-800"
