@@ -93,7 +93,8 @@ const HostelDetail: React.FC = () => {
     );
   }
 
-  const tabs: string[] = ["Overview", "Amenities", "Location", "Reviews"];
+  const tabs: string[] = ["Overview","Gallery",
+ "Amenities", "Location", "Reviews"];
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -243,8 +244,55 @@ const HostelDetail: React.FC = () => {
                     </div>
                   </div>
                 )}
+              {/* 3. GALLERY VIEWPORT */}
+{activeTab === "Gallery" && (
+  <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+    
+    <div className="flex items-center justify-between mb-6">
+      <div>
+        <h3 className="text-xl font-heading font-bold text-text-primary">
+          Hostel Gallery
+        </h3>
 
-                {/* 3. LOCATION VIEWPORT */}
+        <p className="text-sm text-text-secondary mt-1">
+          Explore all room photos, amenities, and property visuals.
+        </p>
+      </div>
+    </div>
+
+    {hostel.gallery && hostel.gallery.length > 0 ? (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        {hostel.gallery.map((item, idx) => (
+          <div
+            key={idx}
+            className="overflow-hidden rounded-2xl border border-border-light bg-zinc-100 group"
+          >
+            {item.type === "image" ? (
+              <img
+                src={item.url}
+                alt={`${hostel.name} gallery ${idx + 1}`}
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <video
+                controls
+                className="w-full h-64 object-cover"
+              >
+                <source src={item.url} type="video/mp4" />
+              </video>
+            )}
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div className="text-sm text-text-tertiary">
+        No gallery media available.
+      </div>
+    )}
+  </div>
+)}
+                {/* 4. LOCATION VIEWPORT */}
                 {activeTab === "Location" && (
   <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-4">
     
