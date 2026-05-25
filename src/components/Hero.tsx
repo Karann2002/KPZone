@@ -7,10 +7,10 @@ import Link from "next/link";
 const Hero: React.FC = () => {
   const navigate = useRouter();
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    navigate("/explore");
-  };
+  // const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   navigate("/explore");
+  // };
 
   // Quick tags for a better mobile/desktop UX
   const quickFilters = [

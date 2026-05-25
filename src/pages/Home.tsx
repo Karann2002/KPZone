@@ -2,7 +2,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, ShieldCheck, Home as HomeIcon, BadgePercent, Star, Quote } from "lucide-react";
-
 import Hero from "../components/Hero";
 import HostelCard from "../components/HostelCard";
 import { mockHostels } from "@/data/mockHostel";

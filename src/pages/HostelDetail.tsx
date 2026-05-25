@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import {
   Star,
@@ -133,7 +135,8 @@ const HostelDetail: React.FC<HostelDetailProps>= ({slug}) => {
               hostel.gallery.map((item, idx) => (
                 <SwiperSlide key={idx} className="bg-zinc-900">
                   {item.type === "image" ? (
-                    <img
+                    <Image
+                    fill
                       src={item.url}
                       className="w-full h-full object-cover"
                       alt={`${hostel.name} view ${idx + 1}`}
@@ -260,9 +263,9 @@ const HostelDetail: React.FC<HostelDetailProps>= ({slug}) => {
 {activeTab === "Gallery" && (
   <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
     
-    <div className="flex items-center justify-between mb-6">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
       <div>
-        <h3 className="text-xl font-heading font-bold text-text-primary">
+        <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary">
           Hostel Gallery
         </h3>
 
@@ -278,22 +281,26 @@ const HostelDetail: React.FC<HostelDetailProps>= ({slug}) => {
         {hostel.gallery.map((item, idx) => (
           <div
             key={idx}
-            className="overflow-hidden rounded-2xl border border-border-light bg-zinc-100 group"
+            className="relative overflow-hidden border border-border-light bg-zinc-100 group aspect-[4/3]"
           >
             {item.type === "image" ? (
-              <img
+              <Image
+                fill
                 src={item.url}
                 alt={`${hostel.name} gallery ${idx + 1}`}
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
               <video
                 controls
-                className="w-full h-64 object-cover"
+                className="w-full h-full object-cover"
               >
                 <source src={item.url} type="video/mp4" />
               </video>
             )}
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none" />
           </div>
         ))}
       </div>

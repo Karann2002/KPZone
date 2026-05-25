@@ -20,9 +20,16 @@ interface Amenity {
 }
 
 interface Hostel {
+
   id: number;
+  slug : string;
+  image : string;
+  name : string;
+  description : string;
+  location : string;
   price: number;
   gender: string;
+  rating : number;
   occupancy: string[];
   amenities: Amenity[];
 }

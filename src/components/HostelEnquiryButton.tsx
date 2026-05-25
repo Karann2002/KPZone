@@ -35,7 +35,7 @@ const FloatingWhatsAppEnquiry: React.FC = () => {
   };
 
   const handleWhatsAppRedirect = (
-    e?: React.FormEvent<HTMLFormElement>
+    e: React.MouseEvent<HTMLButtonElement>
   ) => {
     if (e) e.preventDefault();
 
@@ -85,7 +85,7 @@ const FloatingWhatsAppEnquiry: React.FC = () => {
 
           {/* Form */}
           <form
-            onSubmit={handleWhatsAppRedirect}
+            // onSubmit={handleWhatsAppRedirect}
             className="p-4 space-y-4"
           >
             
@@ -156,6 +156,7 @@ const FloatingWhatsAppEnquiry: React.FC = () => {
 
       {/* Floating Button */}
       <button
+        
         onClick={handleWhatsAppRedirect}
         className={`relative ${
           isOpen

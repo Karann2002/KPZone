@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { MapPin, Star, IndianRupee, ArrowRight, ShieldCheck } from "lucide-react";
+import { MapPin, Star, ArrowRight, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 
 interface Amenity {
   name: string;
@@ -25,7 +26,6 @@ interface HostelCardProps {
 }
 
 const HostelCard: React.FC<HostelCardProps> = ({ hostel }) => {
-  console.log(hostel);
   
   return (
     <div
@@ -35,8 +35,8 @@ const HostelCard: React.FC<HostelCardProps> = ({ hostel }) => {
       {/* 1. Media Asset Block */}
       <div className="relative w-full md:w-[32%] lg:w-[28%] h-48 sm:h-56 md:h-auto min-h-[200px] overflow-hidden bg-zinc-100 shrink-0">
        <Link href={`/hostel/${hostel.slug}`}>
-        <img 
-        
+        <Image 
+          fill
           src={hostel.image}
           alt={hostel.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
