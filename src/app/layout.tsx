@@ -18,9 +18,11 @@ const outfit = Outfit({
   weight: ["500", "600", "700", "800"],
 });
 export const metadata: Metadata = {
-  title: "KPZone Stays",
-  description: "Find Your Perfect Stay",
+  title: "KPZone Stays - Find Your Perfect Stay",
+  description:
+    "Discover premium hostels and PG accommodations near Greater Noida, Knowledge Park, Pari Chowk, Galgotias University, Sharda University, and G.L. Bajaj. Find affordable student stays with Wi-Fi, food, security, AC rooms, and modern amenities at KPZone Stays.",
 };
+
 
 export default function RootLayout({
   children,

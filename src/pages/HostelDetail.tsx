@@ -1,18 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import {
   Star,
-  IndianRupee,
-  ArrowLeft,
+    ArrowLeft,
   GraduationCap,
-  MessageSquare,
   MapPin,
   CheckCircle,
-  Phone,
   Clock,
   ShieldAlert,
 } from "lucide-react";
@@ -23,7 +19,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { mockHostels } from "@/data/mockHostel";
-import { log } from "console";
 
 /* ---------------- TYPES ---------------- */
 interface GalleryItem {
@@ -41,6 +36,10 @@ interface Review {
   comment: string;
   rating: number;
 }
+interface HostelDetailProps {
+  slug: string;
+}
+
 
 interface Hostel {
 
@@ -57,11 +56,24 @@ interface Hostel {
   description?: string;
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const hostel = mockHostels.find(
+    (h) => h.slug === params.slug
+  );
+
+  return {
+    title: hostel?.name,
+    description: hostel?.description,
+  };
+}
+
 /* ---------------- COMPONENT ---------------- */
-const HostelDetail: React.FC = () => {
-  const params = useParams();
+const HostelDetail: React.FC<HostelDetailProps>= ({slug}) => {
  
-  const slug = params?.slug as string;
 
   const [activeTab, setActiveTab] = useState<string>("Overview");
   
