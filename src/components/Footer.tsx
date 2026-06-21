@@ -101,12 +101,14 @@ const Footer: React.FC = () => {
             <li className="flex items-start gap-2.5 text-text-secondary text-sm">
               <Phone size={16} className="text-brand-primary mt-0.5 shrink-0" />
               <div className="flex flex-col gap-1">
-                <a href="tel:+918103586712" className="hover:text-brand-primary transition-colors">+91 8103586712</a>
+                <a href="tel:+917999032854" className="hover:text-brand-primary transition-colors">+91 7999032854 </a>
+                <a href="tel:+917489837462" className="hover:text-brand-primary transition-colors">+91 7489837462 </a>
+
               </div>
             </li>
             <li className="flex items-center gap-2.5 text-text-secondary text-sm">
               <Mail size={16} className="text-brand-primary shrink-0" />
-              <a href="mailto:support@kpzonestays.com" className="hover:text-brand-primary transition-colors">support@kpzonestays.com</a>
+              <a href="mailto:kpzonestays@gmail.com" className="hover:text-brand-primary transition-colors">kpzonestays@gmail.com</a>
             </li>
             
           </ul>

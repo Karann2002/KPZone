@@ -35,12 +35,12 @@ const Contact: React.FC = () => {
 
                 <div>
                   <h4 className="font-semibold text-text-primary">Phone</h4>
-                  <a href="tel:+918871273244" >
-                  <p className="text-text-secondary">+91 8871273244</p>
+                  <a href="tel:+917489837462" >
+                  <p className="text-text-secondary hover:text-brand-primary transition-colors">+91 7489837462</p>
 
                   </a>
-                  <a href="tel:+918103586712" >
-                  <p className="text-text-secondary mt-1">+91 8103586712</p>
+                  <a href="tel:+917999032854" >
+                  <p className="text-text-secondary mt-1 hover:text-brand-primary transition-colors">+91 7999032854</p>
 
                   </a>
 
@@ -57,12 +57,11 @@ const Contact: React.FC = () => {
                   <h4 className="font-semibold text-text-primary">Email</h4>
 
                   <p className="text-text-secondary mt-1">
-                    support@kpzonestays.com
+                                  <a href="mailto:kpzonestays@gmail.com" className="hover:text-brand-primary transition-colors">kpzonestays@gmail.com</a>
+
                   </p>
 
-                  <p className="text-text-secondary">
-                    enquiries@kpzonestays.com
-                  </p>
+                  
                 </div>
               </div>
 

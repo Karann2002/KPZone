@@ -462,7 +462,7 @@ const HostelDetail: React.FC<HostelDetailProps>= ({slug}) => {
                   <p className="text-xs text-white/80 leading-snug">Connect directly with a dedicated property advisor.</p>
                 </div>
                 <a
-                  href="https://wa.me/918103586712"
+                  href="https://wa.me/917999032854"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-brand-primary hover:bg-zinc-50 font-bold text-xs py-2.5 px-4 rounded-xl transition-transform active:scale-95 shadow-md z-10 shrink-0"

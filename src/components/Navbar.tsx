@@ -57,11 +57,11 @@ const Navbar: React.FC = () => {
               Contact Us
             </Link>
             <a 
-              href="tel:+918103586712" 
+              href="tel:+917999032854" 
               className="btn-secondary inline-flex items-center gap-2 bg-bg-surface border border-border-light py-2 px-4 rounded-full font-medium text-text-primary transition-all duration-150 hover:bg-border-light"
             >
               <Phone size={16} className="text-brand-primary" />
-              <span>+91 8103586712</span>
+              <span>+91 7999032854</span>
             </a>
           </nav>
 
@@ -148,11 +148,11 @@ const Navbar: React.FC = () => {
         <div className="pt-6 border-t border-border-light">
           <p className="text-xs text-text-tertiary font-medium mb-3">NEED ASSISTANCE?</p>
           <a
-            href="tel:+918103586712"
+            href="tel:+917999032854"
             className="flex items-center justify-center gap-2 bg-brand-primary text-white font-bold py-3 px-4 rounded-xl shadow-md transition-all duration-150 hover:bg-brand-primary-hover active:scale-[0.98]"
           >
             <Phone size={16} />
-            <span>Call +91 8103586712</span>
+            <span>Call +91 7999032854</span>
           </a>
         </div>
       </div>

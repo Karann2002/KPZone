@@ -115,11 +115,11 @@ const HostelCard: React.FC<HostelCardProps> = ({ hostel }) => {
             </div> */}
           </div>
           <div className="flex gap-3">
-          <Link href="/contact">
+          <a href="tel:+917999032854">
 <div className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-green-400 hover:bg-green-500 text-white font-bold text-sm py-3 px-5 rounded-xl transition-all duration-200 shadow-md shadow-brand-primary/5 active:scale-[0.98]">
             <span>Enquiry Now</span>
             <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-          </div></Link>
+          </div></a>
           <Link href={`/hostel/${hostel.slug}`}>
           
           <div className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-primary group-hover:bg-brand-primary/95 text-white font-bold text-sm py-3 px-5 rounded-xl transition-all duration-200 shadow-md shadow-brand-primary/5 active:scale-[0.98]">
