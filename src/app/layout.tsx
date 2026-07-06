@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   keywords: [
   // Brand
   "KPZone Stays",
+  "kpzonestays",
   "KPZone",
 
   // Primary Keywords
