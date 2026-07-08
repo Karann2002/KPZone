@@ -103,6 +103,8 @@ const Footer: React.FC = () => {
               <div className="flex flex-col gap-1">
                 <a href="tel:+917999032854" className="hover:text-brand-primary transition-colors">+91 7999032854 </a>
                 <a href="tel:+917489837462" className="hover:text-brand-primary transition-colors">+91 7489837462 </a>
+                <a href="tel:+917999023135" className="hover:text-brand-primary transition-colors">+91 7999023135 </a>
+
 
               </div>
             </li>
