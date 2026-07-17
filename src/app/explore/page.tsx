@@ -6,7 +6,7 @@ import Explore from "@/pages/Explore";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Explore Hostels",
+  title: "Best Hostel in Greater Noida",
   description:
     "Browse verified hostels and PG accommodations with photos, pricing, and amenities.",
 };

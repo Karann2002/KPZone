@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   "hostel with parking",
   "hostel with laundry",
   "hostel with power backup",
-
+    "best hostels near knowledge park",
   // Search Intent
   "hostels near me",
   "PG near me",
