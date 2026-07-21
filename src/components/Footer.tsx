@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-bg-surface border-t border-border-light pt-12 md:pt-16 mt-24">
+    <footer className="bg-bg-surface border-t border-border-light pt-12 md:pt-16 ">
       <div className="container mx-auto px-6 max-w-7xl mb-8 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1.2fr] gap-8 md:gap-12">
         
         {/* Brand Description Column */}
