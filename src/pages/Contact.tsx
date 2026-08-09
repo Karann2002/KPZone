@@ -35,19 +35,21 @@ const Contact: React.FC = () => {
 
                 <div>
                   <h4 className="font-semibold text-text-primary">Phone</h4>
-                  <a href="tel:+917489837462" >
-                  <p className="text-text-secondary hover:text-brand-primary transition-colors">+91 7489837462</p>
-
+                  <a href="tel:+917489837462">
+                    <p className="text-text-secondary hover:text-brand-primary transition-colors">
+                      +91 7489837462
+                    </p>
                   </a>
-                  <a href="tel:+917999032854" >
-                  <p className="text-text-secondary mt-1 hover:text-brand-primary transition-colors">+91 7999032854</p>
-
+                  <a href="tel:+917999032854">
+                    <p className="text-text-secondary mt-1 hover:text-brand-primary transition-colors">
+                      +91 7999032854
+                    </p>
                   </a>
-                  <a href="tel:+917999023135" >
-                  <p className="text-text-secondary mt-1 hover:text-brand-primary transition-colors">+91 7999023135</p>
-
+                  <a href="tel:+917999023135">
+                    <p className="text-text-secondary mt-1 hover:text-brand-primary transition-colors">
+                      +91 7999023135
+                    </p>
                   </a>
-
                 </div>
               </div>
 
@@ -61,34 +63,34 @@ const Contact: React.FC = () => {
                   <h4 className="font-semibold text-text-primary">Email</h4>
 
                   <p className="text-text-secondary mt-1">
-                                  <a href="mailto:kpzonestays@gmail.com" className="hover:text-brand-primary transition-colors">kpzonestays@gmail.com</a>
-
+                    <a
+                      href="mailto:kpzonestays@gmail.com"
+                      className="hover:text-brand-primary transition-colors"
+                    >
+                      kpzonestays@gmail.com
+                    </a>
                   </p>
-
-                  
                 </div>
               </div>
 
               {/* Address */}
-              {/* <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4">
                 <div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
                   <MapPin size={24} />
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-text-primary">
-                    Office Address
-                  </h4>
+                  <h4 className="font-semibold text-text-primary">Address</h4>
 
-                  <p className="text-text-secondary mt-1 leading-relaxed">
-                    123 Zolo Tower, 100ft Road,
+                  <address className="not-italic leading-relaxed text-text-secondary mt-1 leading-relaxed">
+                    B-46, Ansal Golf Link-1,
                     <br />
-                    Koramangala, 5th Block,
+                    Near Pari Chowk, Greater Noida,
                     <br />
-                    Bangalore, Karnataka 560095
-                  </p>
+                    Uttar Pradesh, India
+                  </address>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, Mail, MapPin, ChevronDown,  } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown, MapPinCheck,  } from "lucide-react";
 
 const Footer: React.FC = () => {
   // Manage separate accordion states for mobile viewports
@@ -112,7 +112,19 @@ const Footer: React.FC = () => {
               <Mail size={16} className="text-brand-primary shrink-0" />
               <a href="mailto:kpzonestays@gmail.com" className="hover:text-brand-primary transition-colors">kpzonestays@gmail.com</a>
             </li>
-            
+            {/* Address */}
+  <li className="flex items-start gap-2.5 text-text-secondary text-sm">
+    <MapPinCheck size={16} className="text-brand-primary mt-0.5 shrink-0" />
+
+    <address className="not-italic leading-relaxed">
+      B-46, Ansal Golf Link-1,
+  <br />
+  Near Pari Chowk, Greater Noida,
+  <br />
+  Uttar Pradesh, India
+      
+    </address>
+  </li>
           </ul>
         </div>
 
